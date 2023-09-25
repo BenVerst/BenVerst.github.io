@@ -1,11 +1,20 @@
 ---
 title: "Benjamin Versteeg"
 toc: false
-about: 
-  template: trestles
-theme: superhero
-
 image: "IMG_3614 (1).JPG"
+about: 
+  template: jolla
+  image-width: 10em
+  image-shape: round
+  links: 
+    - text: LinkedIn
+      href: https://www.linkedin.com/in/ben-versteeg/
+      icon: linkedin
+    - text: GitHub
+      href: https://github.com/BenVerst/BenVerst.github.io
+      icon: github
+    - text: Email
+      href: bversteeg@ucsb.edu
 ---
 
 ## Hi!
