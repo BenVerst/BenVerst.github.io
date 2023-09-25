@@ -2,9 +2,10 @@
 title: "Benjamin Versteeg"
 toc: false
 about: 
-  template: superhero
+  template: trestles
+theme: superhero
 
-image: "C:\Users\17143\Pictures\IMG_3614 (1).JPG"
+image: "IMG_3614 (1).JPG"
 ---
 
 ## Hi!
