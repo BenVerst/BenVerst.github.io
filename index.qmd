@@ -1,3 +1,16 @@
 ---
-title: "BenVerst.github.io"
+title: "Benjamin Versteeg"
+toc: false
+about: 
+  template: superhero
+
+image: "C:\Users\17143\Pictures\IMG_3614 (1).JPG"
 ---
+
+## Hi!
+
+My name is Ben Versteeg and I am in the Master of Environmental Data Science program at UC Santa Barbara.
+
+## Job Experience
+
+Extra Help Employee - Orange County Environmental Resources Department
