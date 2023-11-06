@@ -1,5 +1,5 @@
 ---
-title: "My first blog post"
+title: "My First Blog Post"
 description: "this is my short description"
 author: 
   - name: Ben Versteeg
@@ -11,4 +11,6 @@ categories: [Quarto, R, MEDS]
 citation:
   url: https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post
 image: blog_image.gif
+title-block-banner: space.jpg
+title-block-banner-color: red
 ---
