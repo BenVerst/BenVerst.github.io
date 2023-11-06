@@ -1,0 +1,14 @@
+---
+title: "My first blog post"
+description: "this is my short description"
+author: 
+  - name: Ben Versteeg
+    url: https://www.linkedin.com/in/ben-versteeg/
+    affiliation: Master of Environmental Data Science Program
+    affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds
+date: 11/06/2023
+categories: [Quarto, R, MEDS]
+citation:
+  url: https://github.com/BenVerst/BenVerst.github.io
+image: blog_image.gif
+---

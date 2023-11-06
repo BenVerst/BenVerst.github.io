@@ -19,5 +19,19 @@
     "title": "Benjamin Versteeg",
     "section": "Job Experience",
     "text": "Job Experience\nExtra Help Employee - Orange County Environmental Resources Department"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "My first blog post\n\n\n\nQuarto\n\n\nR\n\n\nMEDS\n\n\n\nthis is my short description\n\n\n\nBen Versteeg\n\n\nNov 6, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/2023-11-06-first_post/index.html",
+    "href": "blog/2023-11-06-first_post/index.html",
+    "title": "My first blog post",
+    "section": "",
+    "text": "CitationBibTeX citation:@online{versteeg2023,\n  author = {Versteeg, Ben},\n  title = {My First Blog Post},\n  date = {2023-11-06},\n  url = {https://github.com/BenVerst/BenVerst.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nVersteeg, Ben. 2023. “My First Blog Post.” November 6,\n2023. https://github.com/BenVerst/BenVerst.github.io."
   }
 ]
