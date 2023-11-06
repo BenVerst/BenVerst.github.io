@@ -9,6 +9,6 @@ author:
 date: 11/06/2023
 categories: [Quarto, R, MEDS]
 citation:
-  url: https://github.com/BenVerst/BenVerst.github.io
+  url: https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post
 image: blog_image.gif
 ---

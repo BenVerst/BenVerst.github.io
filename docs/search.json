@@ -32,6 +32,6 @@
     "href": "blog/2023-11-06-first_post/index.html",
     "title": "My first blog post",
     "section": "",
-    "text": "CitationBibTeX citation:@online{versteeg2023,\n  author = {Versteeg, Ben},\n  title = {My First Blog Post},\n  date = {2023-11-06},\n  url = {https://github.com/BenVerst/BenVerst.github.io},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nVersteeg, Ben. 2023. “My First Blog Post.” November 6,\n2023. https://github.com/BenVerst/BenVerst.github.io."
+    "text": "CitationBibTeX citation:@online{versteeg2023,\n  author = {Versteeg, Ben},\n  title = {My First Blog Post},\n  date = {2023-11-06},\n  url = {https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nVersteeg, Ben. 2023. “My First Blog Post.” November 6,\n2023. https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post."
   }
 ]
