@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/blog/posts/python-notebook-render/STAC-search.html",
       "/blog/2023-11-06-first_post/index.html"
     ]
   }
