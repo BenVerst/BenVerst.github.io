@@ -14,64 +14,64 @@
     "text": "CitationBibTeX citation:@online{versteeg2023,\n  author = {Versteeg, Ben},\n  title = {My {First} {Blog} {Post}},\n  date = {2023-11-06},\n  url = {https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nVersteeg, Ben. 2023. “My First Blog Post.” November 6,\n2023. https://github.com/BenVerst/BenVerst.github.io/tree/master/blog/2023-11-06-first_post."
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "",
     "text": "Thomas Fire Aftermath"
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#about",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#about",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#about",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#about",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "About",
     "text": "About\nThe Thomas Fire, a destructive wildfire that unfolded in December 2017, struck Ventura County, California. It ignited near Santa Paula, the fire quickly gained momentum, fueled by powerful Santa Ana winds and dry environmental conditions. This formidable combination led to the rapid spread of the flames, ultimately encompassing over 281,000 acres, making it one of the largest wildfires in California’s history. Communities, including the city of Ventura, faced widespread evacuations as the fire approached populated areas, causing significant destruction with the loss of numerous homes and structures. Firefighters tirelessly battled the blaze amid challenging conditions, and it took several weeks to achieve full containment by January 12, 2018. The Thomas Fire prompted critical discussions about the increasing threat of wildfires in California and the necessity for enhanced firefighting and prevention strategies."
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#purpose",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#purpose",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#purpose",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#purpose",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Purpose",
     "text": "Purpose\nThe purpose of this notebook is to create a graph of the Air Quality Data in Santa Barbara, CA over time. The other goal is to create a false color image showing the fire scar of the Thomas fire in 2017. The reason for these maps is so we can compare them to see when and how the Thomas fire affected Santa Barbara."
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#highlights",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#highlights",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#highlights",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#highlights",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Highlights",
     "text": "Highlights\n\nData tidying using pandas and geopandas\nVisualizing data\nComparing data\nStatistical analysis"
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#data",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#data",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#data",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#data",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Data",
     "text": "Data\n\nAir Quality Index (AQI) from the US Environmental Protection Agency website. This data will be used to visualize the impact on the AQI of the 2017 Thomas Fire in Santa Barbara County.\nA simplified collection of bands (red, green, blue, near-infrared and shortwave infrared) from the Landsat Collection 2 Surface Reflectance, collected by the Landsat 8 satellite. The data was accessed and pre-processed in the Microsoft Planetary Computer to remove data outside land and coarsen the spatial resolution (Landsat Collection in MPC). Data should be used for visualization purposes only.\nA shapefile of the fire perimeters in California during 2017. The complete file can be accessed in the CA state geoportal."
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#import-libraries-and-functions",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#import-libraries-and-functions",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#import-libraries-and-functions",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#import-libraries-and-functions",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Import Libraries and Functions",
     "text": "Import Libraries and Functions\n\nimport os\nimport numpy as np\nimport pandas as pd\n\nimport geopandas as gpd\nimport xarray as xr\nimport rioxarray as rioxr\nimport matplotlib.patches as mpatches\nfrom matplotlib.markers import MarkerStyle\n\nfrom shapely import Point\nfrom shapely import Polygon\nfrom shapely import box\nimport matplotlib.pyplot as plt\nimport matplotlib.lines as mlines\n\n\nImport and Read Data\n\n# read in the air data using link\naqi_17 = pd.read_csv(\"https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2017.zip\")\naqi_18 = pd.read_csv(\"https://aqs.epa.gov/aqsweb/airdata/daily_aqi_by_county_2018.zip\")\n\n# read in fire dataset\n# create path\nca_bands = os.path.join(os.getcwd(),'Air-Quality-Data-False-Color-Image', 'data', 'landsat8-2018-01-26-sb-simplified.nc')\n\n# read in data using path\nca_fire_bands_2017 = rioxr.open_rasterio(ca_bands)\n\n# read in CA perimeter dataset\nca_fire_perimeter_2017= gpd.read_file(os.path.join(os.getcwd(),'Air-Quality-Data-False-Color-Image', 'data', 'California_Fire_Perimeters_2017', 'California_Fire_Perimeters_2017.shp'))"
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#data-analysis",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#data-analysis",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#data-analysis",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#data-analysis",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Data Analysis",
     "text": "Data Analysis\n\nCreate A Rolling Mean\n\n# adds the mean of the AQI over a 5-day rolling window to the aqi_sb dataframe\naqi_sb['five_day_average'] = aqi_sb.aqi.rolling('5D').mean()"
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#aqi-plot",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#aqi-plot",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#aqi-plot",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#aqi-plot",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "AQI Plot",
     "text": "AQI Plot\n\naqi_sb.plot(y = ['aqi', 'five_day_average'], #plot aqi and five_day_average\n           title = 'AQI in Santa Barbara', #adds title\n           xlabel = 'Year', #adds x label\n           ylabel = 'Air Quality Index (AQI)', #adds y label\n           color = {'aqi': 'green', #adds color to aqi\n                    'five_day_average': 'pink' #add pink to five_day_average\n                   }\n           )\n\n# save plot into folder\nplt.savefig('Air-Quality-Data-False-Color-Image/figures/aqi.png', bbox_inches='tight',  dpi=50)\n\n\n\n\nAround December 2017, There was a large AQI spike in both daily and 5 day average. This was probably due to a fire at the beginning of that year."
   },
   {
-    "objectID": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#map-of-false-color-image-and-thomas-fire-perimeter",
-    "href": "blog/BenVerst-Air-Quality-Data-False-Color-Image/Thomas_Fire_Blog.html#map-of-false-color-image-and-thomas-fire-perimeter",
+    "objectID": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#map-of-false-color-image-and-thomas-fire-perimeter",
+    "href": "blog/Thomas_fire_blog/Thomas_Fire_Blog.html#map-of-false-color-image-and-thomas-fire-perimeter",
     "title": "Air Quality Data & False Color Image of the Thomas Fire",
     "section": "Map of False Color Image and Thomas Fire Perimeter",
     "text": "Map of False Color Image and Thomas Fire Perimeter\n\n# creates empty plot\nfig, ax = plt.subplots(figsize = (7,7))\n\n\n# plot ca fire bands to use as base\nca_fire_bands_2017[['swir22', # subset for bands\n                     'nir08', \n                     'red']].to_array().plot.imshow(ax = ax,\n                                                    robust = True)\n\n# plot thomas fire perimeter\nthomas_perimeter.plot(ax = ax, edgecolor = \"purple\", color = 'none') # plot thomas_perimeter\nthomas_perimeter_patches = mpatches.Patch( color = \"purple\", # color\n                                    label = \"Thomas Fire Perimeter\") # label\n\n# title\nax.set_title('2017 Thomas Fire Perimeter',\nfontsize=22) # font size\n\n# add legend\nax.legend(handles = [thomas_perimeter_patches], frameon=False, loc='upper left', bbox_to_anchor = (1, 1))\n\n# save map into folder\nplt.savefig('Air-Quality-Data-False-Color-Image/figures/thomas_fire.png', bbox_inches='tight',  dpi=50)"
