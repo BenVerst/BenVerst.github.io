@@ -8,6 +8,8 @@ author:
     affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds
 date: 12/14/2023
 categories: [R, MEDS]
+citation:
+  url: https://benverst.github.io/blog/hudson_river_pcb_analysis/hudson_river_analysis.html
 image: PCB-sign.jpg
 jpgdraft: false
 format:
