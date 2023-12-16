@@ -8,8 +8,8 @@ author:
     affiliation-url: https://bren.ucsb.edu/masters-programs/master-environmental-data-science/academics-meds
 date: 12/14/2023
 categories: [R, MEDS]
-#citation:
-#  url: 
+citation:
+  url: https://benverst.github.io/blog/Texas_Power_Crisis/Texas_Power_Crisis.html 
 image: Houston.jpg
 jpgdraft: false
 format:
@@ -22,9 +22,11 @@ Link to repository: <https://github.com/BenVerst/Texas_Power_Crisis>
 
 ## Overview
 
-"In February 2021, the state of Texas suffered a major power crisis, which came about as a result of three severe winter storms sweeping across the United States on February 10--11, 13--17, and 15--20."[^1] For more background, check out these [engineering](https://www.youtube.com/watch?v=08mwXICY4JM&ab_channel=PracticalEngineering) and [political](https://www.youtube.com/watch?v=Zcrsgdl_hP0&ab_channel=Vox) perspectives.
+"In February 2021, the state of Texas suffered a major power crisis, which came about as a result of three severe winter storms sweeping across the United States on February 10--11, 13--17, and 15--20."[^1] For three consecutive weeks, Texas has experienced soaring temperatures, positioning the state as a contender for one of the hottest places on Earth that summer.[^2] For more background, check out these [engineering](https://www.youtube.com/watch?v=08mwXICY4JM&ab_channel=PracticalEngineering) and [political](https://www.youtube.com/watch?v=Zcrsgdl_hP0&ab_channel=Vox) perspectives.
 
 [^1]: Wikipedia. 2021. "2021 Texas power crisis." Last modified October 2, 2021. <https://en.wikipedia.org/wiki/2021_Texas_power_crisis>.
+
+[^2]: https://earth.org/texas-energy-crisis-why-is-the-states-power-grid-so-fragile/#:\~:text=Texas%20Energy%20Crisis%3A%20A%20Fragile%20Power%20Grid&text=As%20shown%20in%20the%202021,freezing%20temperatures%20and%20fuel%20issues.
 
 Topics this notebook will cover:\
 - estimating the number of homes in Houston that lost power as a result of the first two storms\
